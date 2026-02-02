@@ -16,7 +16,6 @@ you have to be careful as people can either get stuck in the snow or be burned b
 
 ## Licenses
 
-* [Roboto font](https://fonts.google.com/specimen/Roboto?preview.text_type=custom#about) under Apache 2.0 license
 * Images/Fonts/Sounds from Kenney are under Creative Commons Zero (CC0)
 
 ## Development Notes

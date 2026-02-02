@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://jhs55aqbv7tw"]
 
+[ext_resource type="Script" uid="uid://cill6ftlpuomw" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+
 [node name="MainMenu" type="Node2D" unique_id=1651906405]
+script = ExtResource("1_yqorp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=468410479]
 offset_right = 1280.0

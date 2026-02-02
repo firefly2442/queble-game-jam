@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blun7ob78f403"]
+
+[ext_resource type="Script" uid="uid://bf73ps13s5ki3" path="res://scripts/Game.gd" id="1_ibkli"]
+
+[node name="Game" type="Node2D" unique_id=393346429]
+script = ExtResource("1_ibkli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2145528082]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=480742732]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time:"
+
+[node name="Cities" type="Node2D" parent="." unique_id=91813364]
+unique_name_in_owner = true
+
+[node name="Roads" type="Node2D" parent="." unique_id=934931845]
+unique_name_in_owner = true
