@@ -20,6 +20,25 @@ you have to be careful as people can either get stuck in the snow or be burned b
 
 ## Development Notes
 
+### Exports
+
+#### Windows
+
+#### Linux
+
+#### Web
+
+Export to `./builds/web/`, call the file `index.html`
+
+Build and run the `Dockerfile`
+
+```shell
+docker build -t queble-game-jam:latest .
+docker run -p 8080:80 queble-game-jam:latest
+```
+
+Browse to [http://localhost:8080/](http://localhost:8080/)
+
 ## References
 
 * [Queble Game Jam Announcement](https://www.youtube.com/watch?v=MvxyXxrVfIs)
