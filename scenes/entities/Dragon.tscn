@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lh3txbxrchpu"]
+
+[ext_resource type="Script" uid="uid://b0b7qkfcya80a" path="res://scripts/entities/Dragon.gd" id="1_32ss0"]
+[ext_resource type="Texture2D" uid="uid://b0yr8ih8tlyn7" path="res://images/pink_box.png" id="2_hdp4x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6va4p"]
+radius = 8.0
+
+[node name="Dragon" type="Node2D" unique_id=890909988]
+z_index = 2
+script = ExtResource("1_32ss0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=765123552]
+texture = ExtResource("2_hdp4x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1330865980]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=464553924]
+shape = SubResource("CircleShape2D_6va4p")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1318990463]
