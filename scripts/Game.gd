@@ -72,5 +72,5 @@ func _ready() -> void:
 		#%Roads.add_child(road)
 
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
