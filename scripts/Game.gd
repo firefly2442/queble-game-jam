@@ -52,6 +52,8 @@ func _ready() -> void:
 				all_cities_have_road = false
 		if all_cities_have_road:
 			break
+	GameState.roads = %Roads.get_children()
+	GameState.cities = %Cities.get_children()
 		
 
 	# randomly generate and place roads
@@ -78,8 +80,9 @@ func _ready() -> void:
 		var dragon: Dragon = dragon_scene.instantiate()
 		# pick a random city to place it in
 		var rand_city: City = %Cities.get_children().pick_random()
-		dragon.global_position = rand_city.global_position
+		dragon.starting_city = rand_city
 		%Dragons.add_child(dragon)
+	GameState.dragons = %Dragons.get_children()
 
 	
 func _process(_delta: float) -> void:

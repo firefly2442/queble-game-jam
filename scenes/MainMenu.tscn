@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jhs55aqbv7tw"]
 
 [ext_resource type="Script" uid="uid://cill6ftlpuomw" path="res://scripts/MainMenu.gd" id="1_yqorp"]
+[ext_resource type="Texture2D" uid="uid://bv43g3rcv4jwj" path="res://images/hand-drawn/dragon-hand-drawn.jpg" id="2_0ykhv"]
 
 [node name="MainMenu" type="Node2D" unique_id=1651906405]
 script = ExtResource("1_yqorp")
@@ -27,6 +28,12 @@ text = "Exit"
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1981949099]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1022691848]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_0ykhv")
+expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainerMenu/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainerMenu/ExitButton" to="." method="_on_exit_button_pressed"]

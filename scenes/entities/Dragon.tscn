@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lh3txbxrchpu"]
 
 [ext_resource type="Script" uid="uid://b0b7qkfcya80a" path="res://scripts/entities/Dragon.gd" id="1_32ss0"]
-[ext_resource type="Texture2D" uid="uid://x3c2d1mofon" path="res://images/Dragon.png" id="2_32ss0"]
+[ext_resource type="Texture2D" uid="uid://ceq4p6wt3xybu" path="res://images/dragon-hand-drawn-palette.png" id="3_6va4p"]
 [ext_resource type="Texture2D" uid="uid://b8p2v65v1v5xl" path="res://images/particle/fire_02.png" id="3_hdp4x"]
 
 [sub_resource type="Curve" id="Curve_hdp4x"]
@@ -48,7 +48,8 @@ preprocess = 1.0
 process_material = SubResource("ParticleProcessMaterial_c5a0m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=765123552]
-texture = ExtResource("2_32ss0")
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_6va4p")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1330865980]
 

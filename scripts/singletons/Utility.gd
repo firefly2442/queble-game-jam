@@ -36,3 +36,11 @@ func segments_intersect(a1: Vector2, a2: Vector2, b1: Vector2, b2: Vector2) -> b
 	var s: float = (-s1.y * (a1.x - b1.x) + s1.x * (a1.y - b1.y)) / (-s2.x * s1.y + s1.x * s2.y)
 	var t: float = ( s2.x * (a1.y - b1.y) - s2.y * (a1.x - b1.x)) / (-s2.x * s1.y + s1.x * s2.y)
 	return s >= 0 and s <= 1 and t >= 0 and t <= 1
+
+func getRoadFromCities(city_one: City, city_two: City) -> Road:
+	for road: Road in GameState.roads:
+		if (road.start_city == city_one and road.end_city == city_two) or \
+		(road.start_city == city_two and road.end_city == city_one):
+			return road
+	push_error("Cannot get road")
+	return null
