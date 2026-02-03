@@ -1,21 +1,56 @@
 [gd_scene format=3 uid="uid://lh3txbxrchpu"]
 
 [ext_resource type="Script" uid="uid://b0b7qkfcya80a" path="res://scripts/entities/Dragon.gd" id="1_32ss0"]
-[ext_resource type="Texture2D" uid="uid://b0yr8ih8tlyn7" path="res://images/pink_box.png" id="2_hdp4x"]
+[ext_resource type="Texture2D" uid="uid://x3c2d1mofon" path="res://images/Dragon.png" id="2_32ss0"]
+[ext_resource type="Texture2D" uid="uid://b8p2v65v1v5xl" path="res://images/particle/fire_02.png" id="3_hdp4x"]
+
+[sub_resource type="Curve" id="Curve_hdp4x"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.0026315786, 0.043622613), 0.0, 0.0, 0, 0, Vector2(0.98097825, 0.19486034), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6va4p"]
+curve = SubResource("Curve_hdp4x")
+
+[sub_resource type="Gradient" id="Gradient_33neo"]
+offsets = PackedFloat32Array(0.0035063114, 0.14936887, 0.5, 1)
+colors = PackedColorArray(0.02745098, 0.015686275, 0.7019608, 0.49019608, 1, 0.32941177, 0.2, 1, 0.72207314, 0.51229197, 0.12121656, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_06ert"]
+gradient = SubResource("Gradient_33neo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c5a0m"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+angular_velocity_curve = SubResource("CurveTexture_6va4p")
+gravity = Vector3(0, -250, 0)
+scale_min = 0.25
+scale_max = 0.25
+color_ramp = SubResource("GradientTexture1D_06ert")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6va4p"]
-radius = 8.0
+radius = 18.5
 
 [node name="Dragon" type="Node2D" unique_id=890909988]
 z_index = 2
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_32ss0")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1110085450]
+scale = Vector2(0.5, 0.5)
+amount = 32
+texture = ExtResource("3_hdp4x")
+lifetime = 0.65
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_c5a0m")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=765123552]
-texture = ExtResource("2_hdp4x")
+texture = ExtResource("2_32ss0")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1330865980]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=464553924]
 shape = SubResource("CircleShape2D_6va4p")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1318990463]

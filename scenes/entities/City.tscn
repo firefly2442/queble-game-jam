@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ssbas5q7mnuq" path="res://images/City.png" id="2_kkk8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkk8u"]
-size = Vector2(215, 220)
+size = Vector2(32.000008, 32.000008)
 
 [node name="City" type="Node2D" unique_id=1038973649]
 z_index = 1
-scale = Vector2(0.2, 0.2)
 script = ExtResource("1_3st74")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050392816]
@@ -18,7 +17,7 @@ texture = ExtResource("2_kkk8u")
 [node name="Area2D" type="Area2D" parent="." unique_id=1227494458]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1644486414]
-position = Vector2(-2.4999948, 19.999977)
+position = Vector2(0, -8.34465e-07)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_kkk8u")
 

@@ -16,9 +16,15 @@ you have to be careful as people can either get stuck in the snow or be burned b
 
 ## Licenses
 
-* Images/Fonts/Sounds from Kenney are under Creative Commons Zero (CC0)
+* Some images and sounds from Kenney are under Creative Commons Zero (CC0)
+  * Fire texture
 
 ## Development Notes
+
+### Images
+
+* Developed using [Pixelorama](https://github.com/Orama-Interactive/Pixelorama).
+* Color palettes from [Lospec](https://lospec.com).
 
 ### Exports
 
@@ -43,3 +49,4 @@ Browse to [http://localhost:8080/](http://localhost:8080/)
 
 * [Queble Game Jam Announcement](https://www.youtube.com/watch?v=MvxyXxrVfIs)
 * [Queble Itch 2026 Game Jam Page](https://itch.io/jam/quebles-jam-2026)
+* [Pixelorama Tutorial](https://www.youtube.com/watch?v=6srsqLhGhKk)
