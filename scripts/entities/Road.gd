@@ -2,7 +2,7 @@ class_name Road
 extends Node2D
 
 var road_segments: int
-var road_width: float = 30.0
+var road_width: float = 26.0
 var points: PackedVector2Array
 var segment_colors: Array[Color]
 var snow_amount: Array[float]
@@ -41,6 +41,16 @@ func _process(delta: float) -> void:
 	
 
 func _draw() -> void:
+	# draw the road edge first
+	for i in range(points.size() - 1):
+		draw_line(
+			points[i],
+			points[i + 1],
+			Color.RED,
+			road_width + 4
+		)
+	
+	# then draw the road with snow over top of it
 	for i in range(points.size() - 1):
 		draw_line(
 			points[i],
@@ -48,6 +58,7 @@ func _draw() -> void:
 			segment_colors[i],
 			road_width
 		)
+	
 
 func setSnowAmount(segment: int, amount: float) -> void:
 	snow_amount[segment] = amount

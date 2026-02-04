@@ -12,6 +12,7 @@ func _ready() -> void:
 		var city_scene: PackedScene = load("uid://iqh6ldxrs8st")
 		var city: City = city_scene.instantiate()
 		city.city_position = positions[i]
+		city.user_select_city.connect(_user_select_city)
 		%Cities.add_child(city)
 
 	var potential_edges: Array[Array] = []
@@ -84,6 +85,9 @@ func _ready() -> void:
 		%Dragons.add_child(dragon)
 	GameState.dragons = %Dragons.get_children()
 
+func _user_select_city(city: City) -> void:
+	GameState.selected_city = city
+	city.drawBox()
 	
 func _process(_delta: float) -> void:
 	pass

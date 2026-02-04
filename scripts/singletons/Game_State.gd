@@ -8,5 +8,7 @@ var roads: Array
 var dragons: Array
 var people: Array
 
+var selected_city: City
+
 func _ready() -> void:
 	pass

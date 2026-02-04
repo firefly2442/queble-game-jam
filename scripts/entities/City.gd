@@ -3,7 +3,7 @@ extends Node2D
 
 var city_position: Vector2i
 var connected_cities: Array[City] = []
-var selected: bool = false
+signal user_select_city(city: City)
 
 func _ready() -> void:
 	self.global_position = city_position
@@ -22,8 +22,8 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	if selected:
-		(%HighlightBox2D as Line2D).visible = true
+	pass
+	
 
 func addConnectedCity(city: City) -> void:
 	connected_cities.append(city)
@@ -31,4 +31,7 @@ func addConnectedCity(city: City) -> void:
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("ui_select"):
-		selected = true
+		emit_signal("user_select_city", self)
+		
+func drawBox() -> void:
+	(%HighlightBox2D as Line2D).visible = true
