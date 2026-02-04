@@ -48,3 +48,6 @@ func _draw() -> void:
 			segment_colors[i],
 			road_width
 		)
+
+func setSnowAmount(segment: int, amount: float) -> void:
+	snow_amount[segment] = amount

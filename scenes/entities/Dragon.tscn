@@ -35,7 +35,7 @@ color_ramp = SubResource("GradientTexture1D_06ert")
 radius = 18.5
 
 [node name="Dragon" type="Node2D" unique_id=890909988]
-z_index = 2
+z_index = 3
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_32ss0")
 

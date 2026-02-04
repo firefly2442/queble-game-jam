@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_kkk8u")
 
 [node name="HighlightBox2D" type="Line2D" parent="." unique_id=2057548408]
 unique_name_in_owner = true
+width = 4.0
 default_color = Color(0, 1, 1, 1)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

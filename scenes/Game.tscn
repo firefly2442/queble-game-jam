@@ -20,3 +20,6 @@ unique_name_in_owner = true
 
 [node name="Dragons" type="Node2D" parent="." unique_id=1455429135]
 unique_name_in_owner = true
+
+[node name="People" type="Node2D" parent="." unique_id=271433052]
+unique_name_in_owner = true

@@ -1,7 +1,7 @@
 extends Node2D
 
 var number_cities: int = 6
-var number_dragons: int = 1
+var number_dragons: int = 2
 
 func _ready() -> void:
 	# randomly generate and place cities

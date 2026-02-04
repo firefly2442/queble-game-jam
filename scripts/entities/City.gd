@@ -19,6 +19,7 @@ func _ready() -> void:
 	]
 	
 	(%HighlightBox2D as Line2D).visible = false
+	
 
 func _process(_delta: float) -> void:
 	if selected:
