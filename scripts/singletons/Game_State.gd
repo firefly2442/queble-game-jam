@@ -10,5 +10,7 @@ var people: Array
 
 var selected_city: City
 
+var people_delivered: int = 0
+
 func _ready() -> void:
 	pass

@@ -88,6 +88,15 @@ func _ready() -> void:
 func _user_select_city(city: City) -> void:
 	GameState.selected_city = city
 	city.drawBox()
+	if city.number_people_waiting > 0:
+		var person_scene: PackedScene = load("uid://c4nu0w2of1ome")
+		var person: Person = person_scene.instantiate()
+		person.global_position = city.global_position
+		person.starting_city = city
+		person.ending_city = city.connected_cities[0]
+		person.setNumberOfPeople(city.number_people_waiting)
+		city.number_people_waiting = 0
+		%People.add_child(person)
 	
 func _process(_delta: float) -> void:
-	pass
+	(%Score as Label).text = str(GameState.people_delivered)

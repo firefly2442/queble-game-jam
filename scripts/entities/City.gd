@@ -4,6 +4,8 @@ extends Node2D
 var city_position: Vector2i
 var connected_cities: Array[City] = []
 signal user_select_city(city: City)
+@export var people_speed: float = 15.0
+var number_people_waiting: int = 1
 
 func _ready() -> void:
 	self.global_position = city_position
@@ -20,9 +22,11 @@ func _ready() -> void:
 	
 	(%HighlightBox2D as Line2D).visible = false
 	
+	(%PeopleTimer as Timer).start(people_speed)
+	
 
 func _process(_delta: float) -> void:
-	pass
+	(%PeopleLabel as Label).text = str(number_people_waiting)
 	
 
 func addConnectedCity(city: City) -> void:
@@ -35,3 +39,8 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		
 func drawBox() -> void:
 	(%HighlightBox2D as Line2D).visible = true
+
+
+func _on_people_timer_timeout() -> void:
+	number_people_waiting += 1
+	(%PeopleLabel as Label).text = str(number_people_waiting)
