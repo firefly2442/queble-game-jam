@@ -55,7 +55,7 @@ func _ready() -> void:
 			break
 	GameState.roads = %Roads.get_children()
 	GameState.cities = %Cities.get_children()
-		
+	
 
 	# randomly generate and place roads
 	#for i in range(0, number_roads):

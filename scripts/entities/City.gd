@@ -24,6 +24,8 @@ func _ready() -> void:
 	
 	(%PeopleTimer as Timer).start(people_speed)
 	
+	self.add_to_group("city")
+	
 
 func _process(_delta: float) -> void:
 	(%PeopleLabel as Label).text = str(number_people_waiting)

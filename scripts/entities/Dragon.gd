@@ -11,6 +11,7 @@ var increasing_segment_index: bool = true
 
 func _ready() -> void:
 	self.global_position = starting_city.city_position
+	self.add_to_group("dragon")
 
 func hasMoreSegments() -> bool:
 	return (increasing_segment_index and segment_index < road.points.size() - 1) \

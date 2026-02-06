@@ -11,7 +11,7 @@ var segment_t: float = 0.0
 var increasing_segment_index: bool = true
 
 func _ready() -> void:
-	pass
+	self.add_to_group("person")
 
 func hasMoreSegments() -> bool:
 	return (increasing_segment_index and segment_index < road.points.size() - 1) \
@@ -65,3 +65,10 @@ func _process(delta: float) -> void:
 
 func setNumberOfPeople(n: int) -> void:
 	number_people = n
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var collider: Node2D = area.get_parent()
+	if collider.is_in_group("dragon"):
+		GameState.people_delivered -= self.number_people
+		self.queue_free()
