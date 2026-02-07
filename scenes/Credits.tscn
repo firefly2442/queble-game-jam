@@ -37,12 +37,12 @@ text = "Programming: Patrick"
 [node name="GraphicsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1992301750]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Graphics: Patrick, Lina, Kenney.nl"
+text = "Graphics: Patrick, Lina, https://Kenney.nl"
 
 [node name="AudioLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1624096529]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Audio:"
+text = "Audio: https://Kenney.nl"
 
 [node name="ThanksToLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=167360707]
 layout_mode = 2

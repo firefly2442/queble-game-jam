@@ -73,17 +73,20 @@ func _ready() -> void:
 func _user_select_city(city: City) -> void:
 	# deselect if we pick the same city
 	if city == GameState.selected_city:
+		AudioManager.playUISwitch()
 		city.drawBox(false)
 		for connected in GameState.selected_city.connected_cities:
 			connected.drawBox(false)
 		GameState.selected_city = null
 	elif city.number_people_waiting > 0 and not GameState.selected_city:
+		AudioManager.playUIClick()
 		GameState.selected_city = city
 		city.drawBox(true)
 		for connected in GameState.selected_city.connected_cities:
 			connected.drawBox(true, Color.GREEN)
 	elif GameState.selected_city:
 		if city in GameState.selected_city.connected_cities:
+			AudioManager.playUIClick()
 			var person_scene: PackedScene = load("uid://c4nu0w2of1ome")
 			var person: Person = person_scene.instantiate()
 			person.global_position = GameState.selected_city.global_position

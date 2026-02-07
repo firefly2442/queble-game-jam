@@ -6,7 +6,7 @@
 [sub_resource type="Gradient" id="Gradient_qbsmt"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_cpr0p"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qbsmt"]
 gradient = SubResource("Gradient_qbsmt")
 
 [sub_resource type="Curve" id="Curve_qbsmt"]
@@ -28,7 +28,7 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.29999998
 scale_max = 0.9
 scale_curve = SubResource("CurveTexture_cpr0p")
-color_ramp = SubResource("GradientTexture1D_cpr0p")
+color_ramp = SubResource("GradientTexture1D_qbsmt")
 
 [node name="Game" type="Node2D" unique_id=393346429]
 script = ExtResource("1_ibkli")
