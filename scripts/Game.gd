@@ -106,3 +106,8 @@ func _process(_delta: float) -> void:
 func _on_game_timer_timeout() -> void:
 	# game is finished, show results
 	SceneSwitcher.switch_scene("uid://bxxiwvubxvak4")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		GameState.reset()
+		SceneSwitcher.switch_scene("uid://jhs55aqbv7tw")
