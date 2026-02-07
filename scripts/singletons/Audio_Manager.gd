@@ -1,0 +1,85 @@
+extends Node
+
+var num_players: int = 8
+
+var available: Array = []                # pool of free players
+var queue: Array = []                    # pending sound path strings
+var active_sounds: Dictionary = {}       # sound_path -> true (queued or playing)
+var player_to_sound: Dictionary = {}     # player -> sound_path
+
+var background_music: AudioStreamPlayer = AudioStreamPlayer.new()
+
+var backgroundvolume: int = -10
+var effectsvolume: int = 0
+
+# https://kidscancode.org/godot_recipes/3.x/audio/audio_manager/
+
+func _ready() -> void:
+	# set initial volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("background"), self.backgroundvolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), self.effectsvolume)
+	
+	# Create the pool of AudioStreamPlayer nodes.
+	for i in num_players:
+		var p: AudioStreamPlayer = AudioStreamPlayer.new()
+		add_child(p)
+		available.append(p)
+		p.connect("finished", Callable(self, "_on_stream_finished").bind(p))
+		p.bus = "sfx"
+	
+	# setup the background music
+	# imported to "loop" when finished
+	add_child(background_music)
+
+func _on_stream_finished(player: AudioStreamPlayer) -> void:
+	# When finished playing a stream, make the player available again.
+	# clear tracking so the sound can be reused
+	if player in player_to_sound:
+		var sound_path: String = player_to_sound[player]
+		active_sounds.erase(sound_path)
+		player_to_sound.erase(player)
+	available.append(player)
+
+func play(sound_path: String) -> void:
+	if active_sounds.has(sound_path):
+		return  # already queued or playing
+	queue.append(sound_path)
+	active_sounds[sound_path] = true
+
+## Stop a specific sound (queued or playing)
+#func stop(sound_path: String) -> void:
+	## remove from queue if present
+	#if queue.has(sound_path):
+		#queue.erase(sound_path)
+		#active_sounds.erase(sound_path)
+#
+	## if it’s playing, find the player and stop it
+	#for player: Node in player_to_sound.keys():
+		#if player_to_sound[player] == sound_path:
+			#player.stop()  # immediate
+			## cleanup as if finished
+			#active_sounds.erase(sound_path)
+			#player_to_sound.erase(player)
+			#if not available.has(player):
+				#available.append(player)
+
+
+func _process(_delta: float) -> void:
+	# apply any potential volume changes
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("background"), self.backgroundvolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), self.effectsvolume)
+	
+	# Play a queued sound if any players are available.
+	if not queue.is_empty() and not available.is_empty():
+		var sound_path: String = queue.pop_front()
+		var player: AudioStreamPlayer = available.pop_front()
+		player.stream = load(sound_path)
+		player.play()
+		player_to_sound[player] = sound_path
+
+
+func playUISwitch() -> void:
+	self.play("uid://vqhl3jalnlxo")
+
+func playUIClick() -> void:
+	self.play("uid://d3drxj7h6d2gb")

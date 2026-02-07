@@ -7,19 +7,23 @@ func _ready() -> void:
 	(%ImageTimer as Timer).start()
 
 func _on_exit_button_pressed() -> void:
+	AudioManager.playUIClick()
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_tree().quit()
 
 
 func _on_start_game_button_pressed() -> void:
+	AudioManager.playUIClick()
 	SceneSwitcher.switch_scene("uid://gnhb0bmfwp5c")
 
 
 func _on_credits_button_pressed() -> void:
+	AudioManager.playUIClick()
 	SceneSwitcher.switch_scene("uid://vwcwry2ct878")
 
 
 func _on_check_button_pressed() -> void:
+	AudioManager.playUISwitch()
 	_toggle_fullscreen()
 
 func _toggle_fullscreen() -> void:

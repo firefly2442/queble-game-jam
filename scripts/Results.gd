@@ -8,5 +8,6 @@ func _ready() -> void:
 
 func _on_continue_button_pressed() -> void:
 	GameState.reset()
+	AudioManager.playUIClick()
 	# back to main menu
 	SceneSwitcher.switch_scene("uid://jhs55aqbv7tw")
