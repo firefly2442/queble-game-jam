@@ -4,20 +4,29 @@
 
 The Queble 2026 game jam game using Godot.
 
+Dragons roam the roads clearing snow with their fire.  Your objective is to
+move people between cities while avoiding the dragons otherwise your people will
+be eaten.  Your people will move faster on cleared roads rather than snowy roads.
+Get as many people as you can moving between the cities before time runs out!
+
 ## Theme
 
 Primary: "out of place"
 Secondary: "timing"
 
-* Goal: clear snow from the roads
-* Gameplay: you use unusual units instead of "snow plows", the city and roads are randomly generated, people travel between cities,
-you don't control the dragons, feed the dragon, timer, the better you do, the more time you get, you control when people leave the cities,
-you have to be careful as people can either get stuck in the snow or be burned by the dragons fire breath
+## Play It!
+
+Play it directly in the browser here:
+
+[https://firefly2442.itch.io/dragons-clear-the-way](https://firefly2442.itch.io/dragons-clear-the-way)
 
 ## Licenses
 
 * Some images and sounds from Kenney are under Creative Commons Zero (CC0)
   * Fire texture
+  * ui and effect sounds
+
+No AI generated art was used.
 
 ## Development Notes
 
@@ -44,6 +53,8 @@ docker run -p 8080:80 queble-game-jam:latest
 ```
 
 Browse to [http://localhost:8080/](http://localhost:8080/)
+
+Or just use the built-in remote deploy ability in the Godot editor.
 
 ## References
 
