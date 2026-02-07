@@ -11,8 +11,8 @@ Get as many people as you can moving between the cities before time runs out!
 
 ## Theme
 
-Primary: "out of place"
-Secondary: "timing"
+* Primary: "out of place"
+* Secondary: "timing"
 
 ## Play It!
 

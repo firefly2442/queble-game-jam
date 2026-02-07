@@ -53,4 +53,5 @@ func _on_image_timer_timeout() -> void:
 
 
 func _on_link_rich_text_label_meta_clicked(meta: Variant) -> void:
+	# click on the link and open it in the browser
 	OS.shell_open(str(meta))

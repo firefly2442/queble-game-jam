@@ -45,7 +45,8 @@ window/stretch/mode="viewport"
 folder_colors={
 "res://images/": "green",
 "res://scenes/": "blue",
-"res://scripts/": "red"
+"res://scripts/": "red",
+"res://sounds/": "purple"
 }
 
 [input]
