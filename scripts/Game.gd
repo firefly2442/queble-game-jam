@@ -6,7 +6,7 @@ var number_dragons: int = 2
 func _ready() -> void:
 	# randomly generate and place cities
 	
-	var positions: Array[Vector2i] = Utility.generate_positions(number_cities, 250, Vector2i(30, 30), Vector2i(1280-30, 720-30))
+	var positions: Array[Vector2i] = Utility.generate_positions(number_cities, 250, Vector2i(50, 50), Vector2i(1280-50, 720-50))
 	
 	for i in range(0, number_cities):
 		var city_scene: PackedScene = load("uid://iqh6ldxrs8st")
@@ -51,7 +51,8 @@ func _ready() -> void:
 		for city: City in %Cities.get_children():
 			if city.connected_cities.size() == 0:
 				all_cities_have_road = false
-		if all_cities_have_road:
+		# make sure all cities are connected to each other, this way we don't have "islands" of orphaned cities
+		if _all_cities_connected(%Cities.get_children()):
 			break
 	GameState.roads = %Roads.get_children()
 	GameState.cities = %Cities.get_children()
@@ -115,3 +116,17 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		GameState.reset()
 		SceneSwitcher.switch_scene("uid://jhs55aqbv7tw")
+
+func _all_cities_connected(cities: Array) -> bool:
+	var visited: Dictionary = {}
+	var stack: Array[City] = [cities[0]]
+	
+	while stack.size() > 0:
+		var c: City = stack.pop_back()
+		if visited.has(c):
+			continue
+		visited[c] = true
+		for n in c.connected_cities:
+			stack.append(n)
+	
+	return visited.size() == cities.size()
