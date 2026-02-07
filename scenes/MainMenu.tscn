@@ -86,6 +86,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Exit"
 
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu" unique_id=473251723]
+layout_mode = 2
+
+[node name="LinkRichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu" unique_id=1375934098]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18431373, 0.9137255, 1, 1)
+bbcode_enabled = true
+text = "[url=https://github.com/firefly2442/queble-game-jam]https://github.com/firefly2442/queble-game-jam[/url]"
+fit_content = true
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1981949099]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -112,4 +122,5 @@ wait_time = 3.0
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="meta_clicked" from="PanelContainer/MarginContainer/HBoxContainer/VBoxContainerMenu/LinkRichTextLabel" to="." method="_on_link_rich_text_label_meta_clicked"]
 [connection signal="timeout" from="ImageTimer" to="." method="_on_image_timer_timeout"]

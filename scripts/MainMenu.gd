@@ -50,3 +50,7 @@ func _show_next_image() -> void:
 func _on_image_timer_timeout() -> void:
 	_show_next_image()
 	(%ImageTimer as Timer).start()
+
+
+func _on_link_rich_text_label_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(str(meta))
