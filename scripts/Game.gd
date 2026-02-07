@@ -56,25 +56,6 @@ func _ready() -> void:
 	GameState.roads = %Roads.get_children()
 	GameState.cities = %Cities.get_children()
 	
-
-	# randomly generate and place roads
-	#for i in range(0, number_roads):
-		#var random_city_1: City
-		#var random_city_2: City
-		#while not random_city_1 or not random_city_2 or random_city_1 == random_city_2:
-			#random_city_1 = %Cities.get_children().pick_random()
-			#random_city_2 = %Cities.get_children().pick_random()
-			## don't make a connection when we have an existing connection already
-			#if random_city_1 in random_city_2.connected_cities or random_city_2 in random_city_1.connected_cities:
-				#random_city_1 = null
-				#random_city_2 = null
-		#var road_scene: PackedScene = load("uid://bqdvxd444l7hg")
-		#var road: Road = road_scene.instantiate()
-		#road.init(random_city_1, random_city_2)
-		#random_city_1.addConnectedCity(random_city_2)
-		#random_city_2.addConnectedCity(random_city_1)
-		#%Roads.add_child(road)
-		
 	# add dragons
 	for i in range(number_dragons):
 		var dragon_scene: PackedScene = load("uid://lh3txbxrchpu")
@@ -84,6 +65,10 @@ func _ready() -> void:
 		dragon.starting_city = rand_city
 		%Dragons.add_child(dragon)
 	GameState.dragons = %Dragons.get_children()
+	
+	# setup timer
+	(%GameTimer as Timer).start(120.0)
+	
 
 func _user_select_city(city: City) -> void:
 	# deselect if we pick the same city
@@ -114,4 +99,10 @@ func _user_select_city(city: City) -> void:
 			GameState.selected_city = null
 	
 func _process(_delta: float) -> void:
-	(%Score as Label).text = str(GameState.people_delivered)
+	(%PeopleSaved as Label).text = str(GameState.people_delivered)
+	(%TimerValue as Label).text = "%.0f" % round((%GameTimer as Timer).time_left)
+
+
+func _on_game_timer_timeout() -> void:
+	# game is finished, show results
+	SceneSwitcher.switch_scene("uid://bxxiwvubxvak4")

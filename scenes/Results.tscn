@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bxxiwvubxvak4"]
+
+[ext_resource type="Texture2D" uid="uid://dd4yhuligvups" path="res://images/Person.png" id="1_ny2nj"]
+[ext_resource type="Script" uid="uid://ca1ha4mevairi" path="res://scripts/Results.gd" id="1_ufxfl"]
+[ext_resource type="Texture2D" uid="uid://b36heyjf8f27w" path="res://images/Person-with-X.png" id="3_3oa2t"]
+
+[node name="Results" type="Node2D" unique_id=1354984067]
+script = ExtResource("1_ufxfl")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1546190457]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=418514640]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1062925075]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=3961879]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Results"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1001276650]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=945101464]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=173120254]
+layout_mode = 2
+texture = ExtResource("1_ny2nj")
+
+[node name="PeopleSavedLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1094497190]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "People Saved:"
+
+[node name="PeopleSaved" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1259481553]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=487490670]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1001014714]
+layout_mode = 2
+texture = ExtResource("3_3oa2t")
+
+[node name="PeopleEatenLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=305647445]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "People Eaten:"
+
+[node name="PeopleEaten" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=776954033]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1835307881]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=597626272]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Final Score:"
+
+[node name="FinalScore" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=51505214]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=128275845]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=478112569]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Continue"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

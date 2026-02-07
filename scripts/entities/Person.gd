@@ -70,5 +70,5 @@ func setNumberOfPeople(n: int) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var collider: Node2D = area.get_parent()
 	if collider.is_in_group("dragon"):
-		GameState.people_delivered -= self.number_people
+		GameState.people_eaten += self.number_people
 		self.queue_free()

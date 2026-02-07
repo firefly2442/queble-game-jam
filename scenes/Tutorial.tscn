@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://gnhb0bmfwp5c"]
+
+[ext_resource type="Script" uid="uid://dtbfram3g3xjh" path="res://scripts/Tutorial.gd" id="1_cfv3y"]
+[ext_resource type="Texture2D" uid="uid://ssbas5q7mnuq" path="res://images/City.png" id="2_ebau5"]
+[ext_resource type="Texture2D" uid="uid://dd4yhuligvups" path="res://images/Person.png" id="3_288ch"]
+[ext_resource type="Texture2D" uid="uid://ceq4p6wt3xybu" path="res://images/dragon-hand-drawn-palette.png" id="4_twv1b"]
+
+[node name="Tutorial" type="Node2D" unique_id=698575101]
+script = ExtResource("1_cfv3y")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=945311472]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=174134899]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1273061258]
+layout_mode = 2
+
+[node name="TutorialLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=308155050]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Tutorial"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=168571090]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1994969352]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=380139167]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Click on cities"
+
+[node name="CityTextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=446369781]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_ebau5")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=230045702]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "to move people"
+
+[node name="PeopleTextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=537267412]
+layout_mode = 2
+texture = ExtResource("3_288ch")
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=304809548]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "between the cities to score points."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2118013227]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1832052854]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Watch out for the dragons, "
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=301782249]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=758375508]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "they will eat your people if they get too close!"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=347862061]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1545949027]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Dragons will clear snow from the roads with their fire, making your people move faster."
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1525783839]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=307298590]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Move as many people as you can before time runs out."
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1782427490]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1534444960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

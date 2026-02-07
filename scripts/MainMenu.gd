@@ -8,4 +8,8 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_start_game_button_pressed() -> void:
-	SceneSwitcher.switch_scene("uid://blun7ob78f403")
+	SceneSwitcher.switch_scene("uid://gnhb0bmfwp5c")
+
+
+func _on_credits_button_pressed() -> void:
+	SceneSwitcher.switch_scene("uid://vwcwry2ct878")

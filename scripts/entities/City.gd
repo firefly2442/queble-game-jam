@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	(%PeopleLabel as Label).text = str(number_people_waiting)
+	(%PeopleLabel as Label).text = str(number_people_waiting) + "x"
 	
 
 func addConnectedCity(city: City) -> void:
