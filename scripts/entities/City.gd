@@ -39,9 +39,10 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event.is_action_pressed("ui_select"):
 		emit_signal("user_select_city", self)
 		
-func drawBox() -> void:
-	(%HighlightBox2D as Line2D).visible = true
-
+		
+func drawBox(val: bool = true, color: Color = Color.AQUA) -> void:
+	(%HighlightBox2D as Line2D).visible = val
+	(%HighlightBox2D as Line2D).modulate = color
 
 func _on_people_timer_timeout() -> void:
 	number_people_waiting += 1

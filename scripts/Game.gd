@@ -86,17 +86,32 @@ func _ready() -> void:
 	GameState.dragons = %Dragons.get_children()
 
 func _user_select_city(city: City) -> void:
-	GameState.selected_city = city
-	city.drawBox()
-	if city.number_people_waiting > 0:
-		var person_scene: PackedScene = load("uid://c4nu0w2of1ome")
-		var person: Person = person_scene.instantiate()
-		person.global_position = city.global_position
-		person.starting_city = city
-		person.ending_city = city.connected_cities[0]
-		person.setNumberOfPeople(city.number_people_waiting)
-		city.number_people_waiting = 0
-		%People.add_child(person)
+	# deselect if we pick the same city
+	if city == GameState.selected_city:
+		city.drawBox(false)
+		for connected in GameState.selected_city.connected_cities:
+			connected.drawBox(false)
+		GameState.selected_city = null
+	elif city.number_people_waiting > 0 and not GameState.selected_city:
+		GameState.selected_city = city
+		city.drawBox(true)
+		for connected in GameState.selected_city.connected_cities:
+			connected.drawBox(true, Color.GREEN)
+	elif GameState.selected_city:
+		if city in GameState.selected_city.connected_cities:
+			var person_scene: PackedScene = load("uid://c4nu0w2of1ome")
+			var person: Person = person_scene.instantiate()
+			person.global_position = GameState.selected_city.global_position
+			person.starting_city = GameState.selected_city
+			person.ending_city = city
+			person.setNumberOfPeople(GameState.selected_city.number_people_waiting)
+			GameState.selected_city.number_people_waiting = 0
+			GameState.selected_city.drawBox(false)
+			city.drawBox(false)
+			%People.add_child(person)
+			for connected in GameState.selected_city.connected_cities:
+				connected.drawBox(false)
+			GameState.selected_city = null
 	
 func _process(_delta: float) -> void:
 	(%Score as Label).text = str(GameState.people_delivered)
