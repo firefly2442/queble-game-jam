@@ -1,6 +1,34 @@
 [gd_scene format=3 uid="uid://blun7ob78f403"]
 
 [ext_resource type="Script" uid="uid://bf73ps13s5ki3" path="res://scripts/Game.gd" id="1_ibkli"]
+[ext_resource type="Texture2D" uid="uid://b0ic1cvtpcev5" path="res://images/Snowflake.png" id="2_qbsmt"]
+
+[sub_resource type="Gradient" id="Gradient_qbsmt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cpr0p"]
+gradient = SubResource("Gradient_qbsmt")
+
+[sub_resource type="Curve" id="Curve_qbsmt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.492487), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cpr0p"]
+curve = SubResource("Curve_qbsmt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qbsmt"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 0, 1)
+initial_velocity_min = -60.0
+initial_velocity_max = 60.0
+angular_velocity_min = -180.00002
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 0.29999998
+scale_max = 0.9
+scale_curve = SubResource("CurveTexture_cpr0p")
+color_ramp = SubResource("GradientTexture1D_cpr0p")
 
 [node name="Game" type="Node2D" unique_id=393346429]
 script = ExtResource("1_ibkli")
@@ -54,5 +82,13 @@ unique_name_in_owner = true
 
 [node name="People" type="Node2D" parent="." unique_id=271433052]
 unique_name_in_owner = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=677146978]
+z_index = -1
+position = Vector2(617, 0)
+amount = 12
+texture = ExtResource("2_qbsmt")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_qbsmt")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
