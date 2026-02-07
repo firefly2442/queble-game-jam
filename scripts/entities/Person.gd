@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 	var distance_left: float = speed * delta
 
 	if global_position.distance_to(ending_city.city_position) < 0.5:
+		AudioManager.playPersonArrivesCity()
 		GameState.people_delivered += number_people
 		queue_free()
 		return
@@ -70,5 +71,6 @@ func setNumberOfPeople(n: int) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var collider: Node2D = area.get_parent()
 	if collider.is_in_group("dragon"):
+		AudioManager.playDragonEatsPerson()
 		GameState.people_eaten += self.number_people
 		self.queue_free()

@@ -107,6 +107,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_game_timer_timeout() -> void:
+	AudioManager.playTimeOver()
 	# game is finished, show results
 	SceneSwitcher.switch_scene("uid://bxxiwvubxvak4")
 

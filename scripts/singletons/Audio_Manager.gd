@@ -83,3 +83,12 @@ func playUISwitch() -> void:
 
 func playUIClick() -> void:
 	self.play("uid://d3drxj7h6d2gb")
+
+func playTimeOver() -> void:
+	self.play("uid://bmdthlqqbcwlt")
+
+func playDragonEatsPerson() -> void:
+	self.play("uid://c1ax1txwe4e2f")
+	
+func playPersonArrivesCity() -> void:
+	self.play("uid://b876yjog6mu75")
