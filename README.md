@@ -33,6 +33,8 @@ No AI generated art was used.
 
 ## Development Notes
 
+Developed and tested with Godot `4.6.0`
+
 ### Images
 
 * Developed using [Pixelorama](https://github.com/Orama-Interactive/Pixelorama).
