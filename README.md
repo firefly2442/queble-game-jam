@@ -25,7 +25,8 @@ Play it directly in the browser here:
 ## Licenses
 
 * Some images and sounds from Kenney are under Creative Commons Zero (CC0)
-  * Fire texture
+  * star image
+  * fire texture
   * ui and effect sounds
 
 No AI generated art was used.
