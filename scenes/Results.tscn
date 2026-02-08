@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd4yhuligvups" path="res://images/Person.png" id="1_ny2nj"]
 [ext_resource type="Script" uid="uid://ca1ha4mevairi" path="res://scripts/Results.gd" id="1_ufxfl"]
 [ext_resource type="Texture2D" uid="uid://b36heyjf8f27w" path="res://images/Person-with-X.png" id="3_3oa2t"]
+[ext_resource type="Texture2D" uid="uid://ckorpxohrt2yv" path="res://images/tileOrange_68.png" id="4_3oa2t"]
 
 [node name="Results" type="Node2D" unique_id=1354984067]
 script = ExtResource("1_ufxfl")
@@ -67,6 +68,10 @@ theme_override_font_sizes/font_size = 24
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1835307881]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=364789894]
+layout_mode = 2
+texture = ExtResource("4_3oa2t")
+
 [node name="ScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=597626272]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -77,13 +82,18 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
+[node name="DescribeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=47991857]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "(saved - eaten)"
+
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=128275845]
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=478112569]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "Continue"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

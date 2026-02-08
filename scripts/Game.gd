@@ -1,7 +1,7 @@
 extends Node2D
 
 var number_cities: int = 6
-var number_dragons: int = 2
+
 
 func _ready() -> void:
 	# randomly generate and place cities
@@ -58,7 +58,7 @@ func _ready() -> void:
 	GameState.cities = %Cities.get_children()
 	
 	# add dragons
-	for i in range(number_dragons):
+	for i in range(GameState.number_dragons):
 		var dragon_scene: PackedScene = load("uid://lh3txbxrchpu")
 		var dragon: Dragon = dragon_scene.instantiate()
 		# pick a random city to place it in

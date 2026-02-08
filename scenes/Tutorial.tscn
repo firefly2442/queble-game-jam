@@ -99,9 +99,113 @@ text = "Move as many people as you can before time runs out."
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1782427490]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1534444960]
+[node name="DifficultyLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1225325928]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Difficulty:"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=972021605]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=584280730]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EasyLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=1494325429]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Easy (1x dragon)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=1588523464]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/HBoxContainer" unique_id=2117975233]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="EasyStartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer" unique_id=1534444960]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Start"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=253304801]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MediumLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=427075356]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Medium (2x dragons)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=1539730710]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer" unique_id=1507492865]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/HBoxContainer" unique_id=1198820334]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MediumStartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2" unique_id=1619657472]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1307050973]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HardLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3" unique_id=1206816270]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Hard (3x dragons)"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3" unique_id=1346917930]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3/HBoxContainer" unique_id=1285844808]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3/HBoxContainer" unique_id=656353811]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3/HBoxContainer" unique_id=1532448225]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HardStartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3" unique_id=1439169451]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer/EasyStartButton" to="." method="_on_easy_start_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer2/MediumStartButton" to="." method="_on_medium_start_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer5/VBoxContainer3/HardStartButton" to="." method="_on_hard_start_button_pressed"]

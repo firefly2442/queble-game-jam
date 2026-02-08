@@ -1,6 +1,6 @@
 extends Node2D
 
-var image_list: Array[String] = ["uid://bv43g3rcv4jwj", "uid://ceq4p6wt3xybu"]
+var image_list: Array[String] = ["uid://bv43g3rcv4jwj", "uid://ceq4p6wt3xybu", "uid://cyveon3wjj1xx", "uid://blfs8f3i0jbmv"]
 var image_index: int = 0
 
 func _ready() -> void:

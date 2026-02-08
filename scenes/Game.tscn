@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bf73ps13s5ki3" path="res://scripts/Game.gd" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b0ic1cvtpcev5" path="res://images/Snowflake.png" id="2_qbsmt"]
+[ext_resource type="Texture2D" uid="uid://blfs8f3i0jbmv" path="res://images/hand-drawn/background-hand-drawn-indexed.png" id="3_cpr0p"]
 
 [sub_resource type="Gradient" id="Gradient_qbsmt"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -90,5 +91,12 @@ amount = 12
 texture = ExtResource("2_qbsmt")
 lifetime = 5.0
 process_material = SubResource("ParticleProcessMaterial_qbsmt")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="." unique_id=1253238528]
+z_index = -2
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_cpr0p")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

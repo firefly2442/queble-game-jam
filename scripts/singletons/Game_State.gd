@@ -2,6 +2,8 @@ extends Node
 
 var snow_speed: float = 60.0
 
+var number_dragons: int = 1
+
 var cities: Array
 var roads: Array
 var dragons: Array
